@@ -1,0 +1,28 @@
+name: 'Upload File to Slack'
+description: 'GitHub Action to upload files to a Slack channel using a custom Node.js script.'
+author: 'Aabed'
+branding:
+  icon: 'upload'
+  color: 'blue'
+
+inputs:
+  slack_token:
+    description: 'The Slack bot token (xoxb-...)'
+    required: true
+  file_path:
+    description: 'The path to the file that should be uploaded.'
+    required: true
+  channel_id:
+    description: 'The Slack channel ID where the file should be uploaded.'
+    required: true
+  initial_comment:
+    description: 'An optional comment to include with the file upload.'
+    required: false    
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+outputs:
+  file_url:
+    description: 'The URL of the uploaded file in Slack.'
