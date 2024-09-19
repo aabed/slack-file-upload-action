@@ -1,0 +1,20 @@
+{
+    "name": "slack-file-upload-action",
+    "version": "1.0.0",
+    "description": "A GitHub Action to upload files to Slack.",
+    "main": "dist/index.js",
+    "scripts": {
+      "build": "ncc build src/index.js -o dist"
+    },
+    "dependencies": {
+      "@actions/core": "^1.10.0",
+      "@slack/web-api": "^6.5.1",
+      "axios": "^0.21.1",
+      "fs": "0.0.1-security",
+      "mime-types": "^2.1.27"
+    },
+    "devDependencies": {
+      "@vercel/ncc": "^0.33.0"
+    }
+  }
+  

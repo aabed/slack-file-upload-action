@@ -1,0 +1,18 @@
+name: Test Slack Upload
+
+on: [push]
+
+jobs:
+  slack-upload:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - run: echo testing> ./foo.txt
+    - name: Upload file to Slack
+      uses: ./  # Use the current action for testing
+      with:
+        slack_token: ${{ secrets.SLACK_TOKEN }}
+        file_path: './foo.txt'
+        channel_id: 'C0755Q8AATT'
+        initial_comment: '*TEST*'
